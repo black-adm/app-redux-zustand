@@ -1,11 +1,17 @@
 import { FormEvent, useState } from "react"
+import { useDispatch } from "react-redux"
+import { add } from "../store"
 
 export function AddTask() {
     const [newTask, setNewTask] = useState('')
+    const dispatch = useDispatch()
 
     function handleNewTask(e: FormEvent) {
         e.preventDefault()
-        console.log(newTask)
+
+        dispatch(add({
+            newTask,
+        }))
     }
 
     return (

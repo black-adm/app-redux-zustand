@@ -7,7 +7,12 @@ const taskSlice = createSlice({
         'Estudar React',
         'Levar a Alice no pediatra'
     ],
-    reducers: {}
+
+    reducers: {
+        add: (state, action) => {
+            state.push(action.payload.newTask)
+        },
+    },
 })
 
 export const store = configureStore({
@@ -15,3 +20,5 @@ export const store = configureStore({
         task: taskSlice.reducer
     }
 })
+
+export const { add } = taskSlice.actions
