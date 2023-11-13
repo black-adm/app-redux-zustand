@@ -31,7 +31,7 @@ export function Player() {
                     </button>
                 </div>
 
-                <main className="mx-3 relative flex overflow-hidden rounded-lg border-4 border-light-primary bg-medium-primary shadow">
+                <main className="pr-80 mx-2 relative flex overflow-hidden rounded-lg border-4 border-light-primary bg-medium-primary shadow">
                     <div className="flex-1">
                         <div className="w-full bg-dark-primary aspect-video">
                             <ReactPlayer
@@ -43,7 +43,65 @@ export function Player() {
                         </div>
                     </div>
 
-                    <aside className="w-80 border-l-4 border-light-primary bg-medium-primary">
+                    <aside className="divide-y-4 divide-light-primary absolute top-0 bottom-0 right-0 overflow-y-scroll scrollbar scrollbar-track-light-primary scrollbar-thumb-condensed-primary scrollbar-thin w-80 border-l-4 border-light-primary bg-medium-primary">
+                        <div>
+                            <button className="flex w-full items-center p-4 gap-3 rounded-sm text-light-primary bg-primary-white hover:bg-primary-gray">
+                                <div className="flex w-8 h-8 rounded-full items-center justify-center text-primary-white bg-light-primary text-xs">
+                                    01
+                                </div>
+
+                                <div className="flex flex-col gap-1 text-left">
+                                    <strong className="text-sm">
+                                        Desvendando o Redux
+                                    </strong>
+                                    <span className="text-xs font-medium text-condensed-primary">
+                                        12 aulas
+                                    </span>
+                                </div>
+
+                                <CaretDoubleDown className="w-4 h-4 ml-auto text-condensed-primary" weight="bold" />
+                            </button>
+
+                            <nav className="relative flex flex-col gap-4 p-6">
+                                <button className="flex items-center gap-3 text-sm text-primary-white">
+                                    <VideoCamera className="w-4 h-4 text-primary-gray" weight="bold" />
+                                    <span>Fundamentos do Redux</span>
+                                    <span className="ml-auto font-mono text-xs text-primary-white">09:13</span>
+                                </button>
+
+                                <button className="flex items-center gap-3 text-sm text-primary-white">
+                                    <VideoCamera className="w-4 h-4 text-primary-gray" weight="bold" />
+                                    <span>Fundamentos do Redux</span>
+                                    <span className="ml-auto font-mono text-xs text-primary-white">09:13</span>
+                                </button>
+
+                                <button className="flex items-center gap-3 text-sm text-primary-white">
+                                    <VideoCamera className="w-4 h-4 text-primary-gray" weight="bold" />
+                                    <span>Fundamentos do Redux</span>
+                                    <span className="ml-auto font-mono text-xs text-primary-white">09:13</span>
+                                </button>
+                            </nav>
+                        </div>
+
+                        <div>
+                            <button className="flex w-full items-center p-4 gap-3 rounded-sm text-light-primary bg-primary-white hover:bg-primary-gray">
+                                <div className="flex w-8 h-8 rounded-full items-center justify-center text-primary-white bg-light-primary text-xs">
+                                    01
+                                </div>
+
+                                <div className="flex flex-col gap-1 text-left">
+                                    <strong className="text-sm">
+                                        Desvendando o Redux
+                                    </strong>
+                                    <span className="text-xs font-medium text-condensed-primary">
+                                        12 aulas
+                                    </span>
+                                </div>
+
+                                <CaretDoubleDown className="w-4 h-4 ml-auto text-condensed-primary" weight="bold" />
+                            </button>
+                        </div>
+
                         <div>
                             <button className="flex w-full items-center p-4 gap-3 rounded-sm text-light-primary bg-primary-white hover:bg-primary-gray">
                                 <div className="flex w-8 h-8 rounded-full items-center justify-center text-primary-white bg-light-primary text-xs">
