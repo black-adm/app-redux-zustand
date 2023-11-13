@@ -4,8 +4,13 @@ import {
 import { Header } from "../components/Header";
 import { VideoPlayer } from "../components/VideoPlayer";
 import { Module } from "../components/Module";
+import { useAppSelector } from "../store";
 
 export function Player() {
+    const modules = useAppSelector(state => {
+        return state.player.course.modules
+    })
+
     return (
         <div className="bg-primary-gray h-screen flex justify-center items-center text-dark-primary">
             <div className="flex w-[1100px] flex-col gap-6">
@@ -24,9 +29,16 @@ export function Player() {
                     </div>
 
                     <aside className="divide-y-4 divide-light-primary absolute top-0 bottom-0 right-0 overflow-y-scroll scrollbar-track-light-primary scrollbar-thumb-condensed-primary scrollbar-thin w-80 border-l-4 border-light-primary bg-medium-primary">
-                        <Module moduleIndex={1} title="Desvendando o Redux" amountOfLessons={12} />
-                        <Module moduleIndex={1} title="Desvendando o Redux" amountOfLessons={12} />
-                        <Module moduleIndex={1} title="Desvendando o Redux" amountOfLessons={12} />
+                        {modules.map((module, index) => {
+                            return (
+                                <Module
+                                    key={module.id}
+                                    moduleIndex={index}
+                                    title={module.title}
+                                    amountOfLessons={module.lessons.length}
+                                />
+                            )
+                        })}
                     </aside>
                 </main>
             </div>
