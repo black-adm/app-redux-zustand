@@ -10,7 +10,7 @@ interface ModuleProps {
 
 export function Module({ moduleIndex, title, amountOfLessons }: ModuleProps) {
     return (
-        <Collapsible.Root>
+        <Collapsible.Root className="group">
             <Collapsible.CollapsibleTrigger className="flex w-full items-center p-4 gap-3 rounded-sm text-light-primary bg-primary-white hover:bg-primary-gray">
                 <div className="flex w-8 h-8 rounded-full items-center justify-center text-primary-white bg-light-primary text-xs">
                     {moduleIndex + 1}
@@ -25,7 +25,9 @@ export function Module({ moduleIndex, title, amountOfLessons }: ModuleProps) {
                     </span>
                 </div>
 
-                <CaretDoubleDown className="w-4 h-4 ml-auto text-condensed-primary" weight="bold" />
+                <CaretDoubleDown
+                    className="group-data-[state=open]:rotate-180 transition transform w-4 h-4 ml-auto text-condensed-primary" weight="bold"
+                />
             </Collapsible.CollapsibleTrigger>
 
             <Collapsible.CollapsibleContent>
