@@ -23,8 +23,10 @@ export function Player() {
                         <VideoPlayer />
                     </div>
 
-                    <aside className="divide-y-4 divide-light-primary absolute top-0 bottom-0 right-0 overflow-y-scroll scrollbar scrollbar-track-light-primary scrollbar-thumb-condensed-primary scrollbar-thin w-80 border-l-4 border-light-primary bg-medium-primary">
-                        <Module />
+                    <aside className="divide-y-4 divide-light-primary absolute top-0 bottom-0 right-0 overflow-y-scroll scrollbar-track-light-primary scrollbar-thumb-condensed-primary scrollbar-thin w-80 border-l-4 border-light-primary bg-medium-primary">
+                        <Module moduleIndex={1} title="Desvendando o Redux" amountOfLessons={12} />
+                        <Module moduleIndex={1} title="Desvendando o Redux" amountOfLessons={12} />
+                        <Module moduleIndex={1} title="Desvendando o Redux" amountOfLessons={12} />
                     </aside>
                 </main>
             </div>

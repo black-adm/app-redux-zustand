@@ -1,20 +1,26 @@
 import { CaretDoubleDown } from "@phosphor-icons/react";
 import { Lesson } from "./Lesson";
 
-export function Module() {
+interface ModuleProps {
+    moduleIndex: number
+    title: string
+    amountOfLessons: number
+}
+
+export function Module({ moduleIndex, title, amountOfLessons }: ModuleProps) {
     return (
         <div>
             <button className="flex w-full items-center p-4 gap-3 rounded-sm text-light-primary bg-primary-white hover:bg-primary-gray">
                 <div className="flex w-8 h-8 rounded-full items-center justify-center text-primary-white bg-light-primary text-xs">
-                    01
+                    {moduleIndex + 1}
                 </div>
 
                 <div className="flex flex-col gap-1 text-left">
                     <strong className="text-sm">
-                        Desvendando o Redux
+                        {title}
                     </strong>
                     <span className="text-xs font-medium text-condensed-primary">
-                        12 aulas
+                        {amountOfLessons} aulas
                     </span>
                 </div>
 
@@ -22,9 +28,9 @@ export function Module() {
             </button>
 
             <nav className="relative flex flex-col gap-4 p-6">
-                <Lesson />
-                <Lesson />
-                <Lesson />
+                <Lesson title="Curso Redux" duration="23:37" />
+                <Lesson title="Curso Redux" duration="23:37" />
+                <Lesson title="Curso Redux" duration="23:37" />
             </nav>
         </div>
     )
