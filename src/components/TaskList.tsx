@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux"
+import { useAppSelector } from "../store"
 
 export function TaskList() {
-    const tasks = useSelector(store => {
+    const tasks = useAppSelector(store => {
         return store.task
     })
 

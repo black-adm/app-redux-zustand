@@ -12,6 +12,8 @@ export function AddTask() {
         dispatch(add({
             newTask,
         }))
+
+        setNewTask('')
     }
 
     return (

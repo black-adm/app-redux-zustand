@@ -1,4 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { useSelector, TypedUseSelectorHook } from "react-redux";
 
 const taskSlice = createSlice({
     name: 'task',
@@ -22,3 +23,6 @@ export const store = configureStore({
 })
 
 export const { add } = taskSlice.actions
+
+export type RootState = ReturnType<typeof store.getState>
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
