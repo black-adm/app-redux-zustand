@@ -2,7 +2,11 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const taskSlice = createSlice({
     name: 'task',
-    initialState: ['Ir para faculdade', 'Estudar React'],
+    initialState: [
+        'Ir para faculdade',
+        'Estudar React',
+        'Levar a Alice no pediatra'
+    ],
     reducers: {}
 })
 

@@ -1,8 +1,19 @@
+import { useSelector } from "react-redux"
+
 export function TaskList() {
+    const tasks = useSelector(store => {
+        return store.task
+    })
+
+    console.log(tasks)
+
     return (
         <ul>
-            <li>Ir para faculdade</li>
-            <li>Estudar React</li>
+            {tasks.map(task =>
+                <li key={task}>
+                    {task}
+                </li>
+            )}
         </ul>
     )
 }
