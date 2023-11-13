@@ -1,14 +1,12 @@
 import { Provider as ReduxProvider } from "react-redux";
-import { AddTask } from "./components/AddTask";
-import { TaskList } from "./components/TaskList";
 import { store } from "./store";
+import { Player } from "./pages/Player";
 
 export function App() {
 
   return (
     <ReduxProvider store={store}>
-      <TaskList />
-      <AddTask />
+      <Player />
     </ReduxProvider>
   )
 }
