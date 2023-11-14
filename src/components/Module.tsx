@@ -1,6 +1,7 @@
 import * as Collapsible from "@radix-ui/react-collapsible"
 import { CaretDoubleDown } from "@phosphor-icons/react";
 import { Lesson } from "./Lesson";
+import { useAppSelector } from "../store";
 
 interface ModuleProps {
     moduleIndex: number
@@ -9,6 +10,10 @@ interface ModuleProps {
 }
 
 export function Module({ moduleIndex, title, amountOfLessons }: ModuleProps) {
+    const lessons = useAppSelector((state) => {
+        return state.player.course.modules[moduleIndex].lessons
+    })
+
     return (
         <Collapsible.Root className="group">
             <Collapsible.CollapsibleTrigger className="flex w-full items-center p-4 gap-3 rounded-sm text-light-primary bg-primary-white hover:bg-primary-gray">
@@ -32,9 +37,15 @@ export function Module({ moduleIndex, title, amountOfLessons }: ModuleProps) {
 
             <Collapsible.CollapsibleContent>
                 <nav className="relative flex flex-col gap-4 p-6">
-                    <Lesson title="Curso Redux" duration="23:37" />
-                    <Lesson title="Curso Redux" duration="23:37" />
-                    <Lesson title="Curso Redux" duration="23:37" />
+                    {lessons.map(lesson => {
+                        return (
+                            <Lesson
+                                key={lesson.id}
+                                title={lesson.title}
+                                duration={lesson.duration}
+                            />
+                        )
+                    })}
                 </nav>
             </Collapsible.CollapsibleContent>
         </Collapsible.Root>
