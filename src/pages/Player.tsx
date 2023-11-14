@@ -5,11 +5,20 @@ import { Header } from "../components/Header";
 import { VideoPlayer } from "../components/VideoPlayer";
 import { Module } from "../components/Module";
 import { useAppSelector } from "../store";
+import { useCurrentLesson } from "../store/slices/player";
+import { useEffect } from "react";
 
 export function Player() {
     const modules = useAppSelector(state => {
         return state.player.course.modules
     })
+
+    const { currentLesson } = useCurrentLesson()
+
+    useEffect(() => {
+        document.title = `Aula - ${currentLesson.title}`
+    }, [currentLesson])
+
 
     return (
         <div className="bg-primary-gray h-screen flex justify-center items-center text-dark-primary">
@@ -17,7 +26,7 @@ export function Player() {
                 <div className="flex items-center justify-between px-2 sm:px-6 md:px-4">
                     <Header />
 
-                    <button className="px-3 py-2 text-sm text-primary-white font-medium flex items-center gap-2 rounded-sm bg-medium-primary hover:bg-light-primary">
+                    <button className="px-3 py-2 text-sm text-primary-white font-medium flex items-center gap-2 rounded-md bg-medium-primary hover:bg-light-primary">
                         <ChatTeardropText className="w-4 h-4" />
                         Deixar feedback
                     </button>
